@@ -1,12 +1,32 @@
 <!--index.wxml-->
 <view class="container">
+  <view class="describe">
+    <text>上传带有人像的照片，智能裁剪可以防止人像被切割，从而获得更好的缩略图体验</text>
+  </view>
+<!-- 主图 -->
+  <view class="show">
+     <image class="blur" mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"></image>
+  </view>
+<!-- 上下图片分割 -->
+  <view class="split" style='padding-top:20px;padding-right:15px;padding-bottom:20px;padding-left:15px;'></view>
 
-
+  <!-- 切分后的图 -->
+  <view class="flex-box">
+      <view class='list-item' >
+    <image class="blur1" mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"></image>
+    </view>
+      <view class='list-item' >
+    <image class="blur2" mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"></image>
+    </view>
+      <view class='list-item' >
+    <image class="blur1" mode="widthFix" src="https://hackwork-1251009918.cos.ap-shanghai.myqcloud.com/handbook/html5/weapp.jpg"></image>
+    </view>
+  </view>
 
   <!-- 上传图片 -->
   <view class="uploader">
     <view class="uploader-text" bindtap="doUpload">
-      <text>上传图片</text>
+      <button style='position:fixed;width:100%;bottom:0'>上传</button>
     </view>
     <view class="uploader-container" wx:if="{{imgUrl}}">
       <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
